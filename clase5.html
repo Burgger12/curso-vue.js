@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mi rutina de ejercicios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5" id="app">
+        <h3>{{titulo}}</h3>
+        <!--al hacer enter agrega una tarea-->
+        <input type="text" class="form-control my-3" v-model='nuevaTarea' @keyup.enter="agregarTarea">
+        
+        <!--al hacer click agrega una tarea-->
+        <button class="btn btn-primary" @clic="agregarTarea">Agregar</button>
+        
+        <!--crea un for que recorre tareas-->
+        <div class="mt-3" v-for="(tarea, index) of tareas">
+            
+            <!--crea la alerta, y le asigna el color segun el estado-->
+           <div role="alert" :class="['alert', tarea.estado ? 'alert-success' : 'alert-danger']" >
+               
+               <!--posiciona los elementos-->
+                <div class="d-flex justify-content-between aling-items-center">
+                    
+                    <!--Muestra el index y la posicion actual del array-->
+                    <div>{{index}} - {{tarea.nombre}} - {{tarea.estado}}</div>
+                    
+                    <div>
+                        <!--al precionar 'OK' cambia el estado -->
+                        <div class="btn btn-success btn-sm" @click="editarTarea(index)">Ok</div>
+                        
+                        <!--al precionar 'X' elimina la tarea seleccionada-->
+                        <div class="btn btn-danger btn-sm" @click="eliminarTarea(index)">X</div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="03.js"></script>
+</body>
+</html>
