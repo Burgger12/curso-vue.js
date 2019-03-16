@@ -11,6 +11,8 @@
 
     <div id="app">
         <h1>{{ message }}</h1>
+        <input type="text" v-model="nuevaFruta"> <!-- con model hacemos concexio de html a js-->
+        <button @click="agregarFruta">Agregar</button> <!--se puede usar v-on:click o @click y le pasas la funcion-->
         <ul>
             <li v-for="fruta of frutas">{{ fruta }}</li> <!--con v-for haces un for-->
         </ul>
