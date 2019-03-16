@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase n4 Vue.js</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app" class="container mt-5">
+        <div  :class="['p-3','text-white',fondo]">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet nesciunt accusantium porro quis dolores, voluptate aliquam magnam similique laboriosam aspernatur vitae nulla architecto natus eos nostrum velit perferendis. Illum, rerum.
+            </p>
+        </div>
+        <br>
+        <input type="text" name="" id="" v-model="fondo" class="form-control">
+        <br>
+        <div class="text-white p-3" :class="{'bg-info' : color, 'bg-success': !color}"> <!-- agrega el bg-info si color = true -->
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem voluptatibus, suscipit optio excepturi, deleniti doloribus quis maxime repudiandae dignissimos, magnam harum debitis incidunt consectetur hic vel quia quae alias itaque.</p>
+        </div>
+        <button class="btn btn-primary" @click="color = !color">cambiar</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="02.js"></script>
+</body>
+</html>
