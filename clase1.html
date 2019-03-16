@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 1 de vue</title>
+</head>
+<body>
+    <!-- todo lo que queremos que use vue debe de estar en un contenedor con el id app-->
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <ul>
+            <li v-for="fruta of frutas">{{ fruta }}</li> <!--con v-for haces un for-->
+        </ul>
+        <!--  un for con arreglo de objetos -->
+        <hr>
+        <ul>
+            <li v-for="frut of fruts">
+                {{frut.nombre}} tiene {{frut.cantidad}} unidades disponibles
+                <span v-if="frut.cantidad === 0">- Sin stock</span>
+            </li>
+        </ul>
+    </div>
+
+    <!--scripts que vamos a usar-->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="01.js"></script>
+
+</body>
+</html>
