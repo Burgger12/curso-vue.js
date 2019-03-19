@@ -6,8 +6,11 @@ const store = new Vuex.Store({
         message: ''
     },/*creamos una mutacion que son funciones */
     mutations:{
-        aumentar(){
-            this.state.numero ++
+        aumentar(state){
+            state.numero ++
+        },
+        disminuir(state,n){
+            state.numero -= n
         }
     }
 });
