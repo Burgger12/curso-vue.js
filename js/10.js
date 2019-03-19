@@ -2,7 +2,8 @@
 const store = new Vuex.Store({
     //creamos un estado
     state:{
-        numero: 10
+        numero: 10,
+        message: ''
     },/*creamos una mutacion que son funciones */
     mutations:{
         aumentar(){
@@ -12,11 +13,9 @@ const store = new Vuex.Store({
 });
 const app = new Vue({
     el:'#app',
-    store:store,
+    store,
     data:{
-
     },
-    methods:{
-
+    computed:{
     }
 });
